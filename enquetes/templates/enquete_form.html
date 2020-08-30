@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Criar enquete</title>
+    </head>
+
+    <body>
+        <h1>Nova Enquete:</h1>
+        <form action="/enquete/submit" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
