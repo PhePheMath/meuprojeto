@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from enquetes.views import boasvindas
+from enquetes.views import boasvindas, criar_enquete, show_enquete
+
+app_name = 'meuprojeto'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bemvindo/', boasvindas),
+    path('', boasvindas),
+    path('criar_enquete/', criar_enquete, name='criar_enquete'),
+    path('enquete/<int:enquete_id>', show_enquete, name='mostrar_enquete'),
+    path('enquete/submit', criar_enquete, name='salvar_enquete'),
 ]
